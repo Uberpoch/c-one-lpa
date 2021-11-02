@@ -1,0 +1,42 @@
+{% if c_one_lp_app == "true" %}
+  {% if ufcc_onbrand_local %}
+      <!-- ONBRAND LOCAL -->
+      <link id="onbrand__styles" rel="stylesheet" href="/build/en/en.css">
+  {% elsif ufcc_onbrand_branch %}
+      <!-- ONBRAND BRANCH {{ ufcc_onbrand_branch }} -->
+      <link id="onbrand__styles-staging" rel="stylesheet" href="//cihost.uberflip.com/capital-one-landingpage-app/{{ ufcc_onbrand_branch }}/build/en/en.css">
+  {% else %}
+      <link id="onbrand__styles-production" rel="stylesheet" href="//cihost.uberflip.com/capital-one-landingpage-app/master/build/en/en.css">
+  {% endif %}
+{% endif %}
+
+
+{% if c_one_lp_app == "true" %}
+  {% if ufcc_onbrand_local %}
+      <!-- ONBRAND LOCAL -->
+      <script id="__bs_script__" async src="/browser-sync/browser-sync-client.js?v=2.18.13"></script>
+      <script id="onbrand__scripts" src="/build/en/en.bundle.js"></script>
+  {% elsif ufcc_onbrand_branch %}
+      <!-- ONBRAND BRANCH {{ ufcc_onbrand_branch }} -->
+      <script id="onbrand__scripts-staging" src="//cihost.uberflip.com/capital-one-landingpage-app/{{ufcc_onbrand_branch}}/build/en/en.bundle.js"></script>
+  {% else %}
+      <script id="onbrand__scripts-production" src="//cihost.uberflip.com/capital-one-landingpage-app/master/build/en/en.bundle.js"></script>
+  {% endif %}
+{% endif %}
+
+
+
+{% if c_one_lp_app == "true" %}
+<script>console.log("********* C ONE langing page *********")</script>
+<script>window.cOneLpa = window.cOneLpa || {};
+window.cOneLpa.template = '{{c_one_template}}'</script>
+<script>console.log("app is on")</script>
+<script>console.log('{{c_one_template}}')</script>
+<script>console.log("********* C ONE langing page *********")</script>
+<link id="onbrand__styles" rel="stylesheet" href="/build/en/en.css">
+{% endif %}
+
+{% if c_one_lp_app == "true" %}
+<script id="__bs_script__" async src="/browser-sync/browser-sync-client.js?v=2.18.13"></script>
+    <script id="onbrand__scripts" src="/build/en/en.bundle.js"></script>
+{% endif %}

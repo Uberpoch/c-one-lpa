@@ -1,0 +1,52 @@
+  
+{
+    "account_code_blocks": 
+    [
+    {
+        "code": "_SAMPLE_MANIFEST",
+        "name": "sample_manifest",
+        "content": "{% if c_one_lp_app == \"true\" %}\r\n<script>console.log(\"********* C ONE langing page *********\")<\/script>\r\n<script>window.cOneLpa = window.cOneLpa || {};\r\nwindow.cOneLpa.template = '{{c_one_template}}'<\/script>\r\n<script>console.log(\"app is on\")<\/script>\r\n<script>console.log('{{c_one_template}}')<\/script>\r\n<script>console.log(\"********* C ONE langing page *********\")<\/script>\r\n<link id=\"onbrand__styles\" rel=\"stylesheet\" href=\"\/build\/en\/en.css\">\r\n{% endif %}",
+        "placement_code": "HEAD",
+        "description": "This is a sample manifest outputting fields to the console"
+    },
+    {
+        "code": "_SAMP_MANIFEST",
+        "name": "samp_manifest",
+        "content": "{% if c_one_lp_app == \"true\" %}\r\n<script id=\"__bs_script__\" async src=\"\/browser-sync\/browser-sync-client.js?v=2.18.13\"><\/script>\r\n    <script id=\"onbrand__scripts\" src=\"\/build\/en\/en.bundle.js\"><\/script>\r\n{% endif %}",
+        "placement_code": "BODY_BOTTOM",
+        "description": "This is a sample manifest outputting fields to the console"
+    }
+    ],
+
+    "config_fields": 
+    [
+    {
+        "code": "_TOGGLE_EXAMPLE",
+        "name": "c_one_lp_app",   
+        "label": "toggle example",
+        "ordinal": 0,
+        "category": "integrations",
+        "control_type": "toggle",
+        "scopes": ["hub"],
+        "description": "Sample toggle input"
+    },
+    {
+        "code": "_NUMBER_EXAMPLE",
+        "name": "c_one_template",   
+        "label": "Template",
+        "ordinal": 1,
+        "category": "integrations",
+        "control_type": "select_dropdown",
+        "scopes": ["hub", "stream"],
+        "description": "Please select a template",
+        "control_props": 
+        {
+        "placeholder": "Please select option",
+        "items": [
+            {"text": "Template 1", "value": "template_1"},
+            {"text": "Template 2", "value": "template_2"}
+        ]
+        }
+    }
+    ]
+}
